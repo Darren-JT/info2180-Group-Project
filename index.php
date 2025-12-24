@@ -12,11 +12,11 @@
 
     <div class="container">
         <div class="nav-bar">
-            <p>Home</p>
-            <p>New Contact</p>
-            <p>Users</p>
-            <br>
-            <p>Logout</p>
+            <a href="index.php">Home</a><br>
+            <a href="#">New Contact</a><br>
+            <a href="#">Users</a><br>
+            <a href="login.php">Logout</a>
+        <!--Does a logout method in js or smt    -->        
         </div>
         <div class="dashboard">
             <div class="dashboard-head">
@@ -44,6 +44,7 @@
                         </tr>
                     </thead>
                     <tbody id="contact-list">
+                        <!-- This is filler stuff -->
                         <tr>
                             <td><strong>Mr. Micheal Scott</strong></td>
                             <td>micheal.scott@paper.co</td>
