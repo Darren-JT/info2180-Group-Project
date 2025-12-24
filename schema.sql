@@ -16,7 +16,7 @@ CREATE TABLE Users (
 
 
     role VARCHAR(50),
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 
 
 );
@@ -52,7 +52,7 @@ CREATE TABLE Notes (
 
     comment TEXT,
     created_by INTEGER,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 
 );
 
