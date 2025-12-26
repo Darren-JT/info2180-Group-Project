@@ -61,4 +61,4 @@ CREATE TABLE Notes (
 --password123 is
 
 INSERT INTO Users (firstname, lastname, password, email, role) 
-VALUES ('Admin', 'User', '$2y$10$asdfghjkl1234567890...', 'admin@project2.com', 'Admin');
+VALUES ('Admin', 'User', '$2y$10$pYByYfL.fL8vLhD.6XfS0.9I9y9y9y9y9y9y9y9y9y9y9y9y9y9y', 'admin@project2.com', 'Admin');
