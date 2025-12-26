@@ -37,4 +37,4 @@ CREATE TABLE Notes(
 );
 
 INSERT INTO Users(first_name, last_name, email, password, role, created_at) VALUES
-('Admin', 'User', 'admin@project2.com', '$2y$10$YourGeneratedHashHere', 'admin', NOW());
+('Admin', 'User', 'admin@project2.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', NOW());
