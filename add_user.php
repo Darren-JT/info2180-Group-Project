@@ -1,6 +1,6 @@
 <?php
-require_once '../includes/db_connect.php';
-require_once '../includes/admin_check.php'; 
+require_once '../includes/database_connection_logic';
+require_once '../includes/check_admin.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
