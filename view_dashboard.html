@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Dashboard</h1>
+
+        <div class="dashboard-controls">
+            <button onclick="loadContacts('all')" class="active" data-filter="all">All Contacts</button>
+            <button onclick="loadContacts('sales')" data-filter="sales">Sales Leads</button>
+            <button onclick="loadContacts('support')" data-filter="support">Support Leads</button>
+            <button onclick="loadContacts('assigned')" data-filter="assigned">Assigned to me</button>
+        </div>
+
+        <table id="contacts-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" class="loading">Loading contacts...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Load contacts on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            loadContacts('all');
+        });
+
+        function loadContacts(filter) {
+            const tbody = document.querySelector('#contacts-table tbody');
+            const buttons = document.querySelectorAll('.dashboard-controls button');
+
+            // Update active button
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === filter) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Show loading state
+            tbody.innerHTML = '<tr><td colspan="4" class="loading">Loading contacts...</td></tr>';
+
+            // Fetch contacts from server
+            fetch(`get_contacts.php?filter=${filter}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(contacts => {
+                    if (contacts.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="4" class="no-contacts">No contacts found</td></tr>';
+                        return;
+                    }
+
+                    // Build table rows
+                    let html = '';
+                    contacts.forEach(contact => {
+                        const typeClass = contact.type === 'Sales Lead' ? 'sales' : 'support';
+                        html += `
+                            <tr>
+                                <td>${escapeHtml(contact.firstname)} ${escapeHtml(contact.lastname)}</td>
+                                <td>${escapeHtml(contact.email)}</td>
+                                <td>${escapeHtml(contact.company)}</td>
+                                <td><span class="type-badge ${typeClass}">${escapeHtml(contact.type)}</span></td>
+                            </tr>
+                        `;
+                    });
+                    tbody.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error loading contacts:', error);
+                    tbody.innerHTML = '<tr><td colspan="4" class="error">Error loading contacts. Please try again.</td></tr>';
+                });
+        }
+
+        // Helper function to escape HTML and prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+
+</html>
