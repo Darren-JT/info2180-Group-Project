@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Scott - Lead Details</title>
+    <link rel="stylesheet" href="contact_details_style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Header Section -->
+        <header class="profile-header">
+            <div class="profile-meta">
+                <div class="avatar-circle">
+                    <svg viewBox="0 0 24 24" fill="#94a3b8">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                </div>
+                <div class="name-container">
+                    <h1>Mr. Michael Scott</h1>
+                    <p class="meta-text">Created on November 9, 2022 by David Wallace</p>
+                    <p class="meta-text">Updated on November 13, 2022</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-assign">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v7" />
+                        <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v10" />
+                        <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                        <path
+                            d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+                    </svg>
+                    Assign to me
+                </button>
+                <button class="btn btn-switch">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+                    </svg>
+                    Switch to Sales Lead
+                </button>
+            </div>
+        </header>
+
+        <!-- Details Grid Section -->
+        <section class="details-grid">
+            <div class="detail-block">
+                <label>Email</label>
+                <p>michael.scott@paper.co</p>
+            </div>
+            <div class="detail-block">
+                <label>Telephone</label>
+                <p>876-999-9999</p>
+            </div>
+            <div class="detail-block">
+                <label>Company</label>
+                <p>The Paper Company</p>
+            </div>
+            <div class="detail-block">
+                <label>Assigned To</label>
+                <p>Jen Levinson</p>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section class="notes-section">
+            <h2 class="section-heading">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                </svg>
+                Notes
+            </h2>
+
+            <div class="note-item">
+                <h3>Jane Doe</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sapiente officiis suscipit assumenda
+                    praesentium, porro ad magni at distinctio vel beatae sit fugiat quia placeat necessitatibus, magnam
+                    provident veritatis perspiciatis?</p>
+                <span class="note-date">November 10, 2022 at 4pm</span>
+            </div>
+
+            <div class="note-item">
+                <h3>John Doe</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sapiente officiis suscipit assumenda
+                    praesentium, porro ad magni at distinctio vel beatae sit fugiat quia placeat necessitatibus, magnam
+                    provident veritatis perspiciatis?</p>
+                <span class="note-date">November 11, 2022 at 10am</span>
+            </div>
+
+            <div class="note-item">
+                <h3>John Doe</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sapiente officiis suscipit assumenda
+                    praesentium, porro ad magni at distinctio vel beatae sit fugiat quia placeat necessitatibus, magnam
+                    provident veritatis perspiciatis?</p>
+                <span class="note-date">November 13, 2022 at 6pm</span>
+            </div>
+        </section>
+
+        <!-- Add Note Area -->
+        <section class="input-container">
+            <label for="new-note">Add a note about Michael</label>
+            <textarea id="new-note" placeholder="Enter details here"></textarea>
+        </section>
+    </div>
+
+    <script src="contact_details.js"></script>
+</body>
+
+</html>
